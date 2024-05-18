@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "prompts"
+name = "prompts.py"
 dynamic = ["version"]
 description = 'Beautiful prompts for Python.'
 readme = "README.md"
