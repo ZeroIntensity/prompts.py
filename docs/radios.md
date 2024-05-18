@@ -40,9 +40,14 @@ from prompts import radio
 
 print("What is your favorite color?", end=" ", flush=True)
 items = ["Blue", "No, yellow!"]
-index = radio(items)
+index = radio(items, transient=True)
 chosen_item = items[index]
+print(chosen_item)
 ```
+
+!!! note
+
+    The radio selection in `ask_radio` is always transient.
 
 ## Confirmations
 
