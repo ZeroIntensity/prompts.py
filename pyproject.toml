@@ -41,6 +41,17 @@ path = "prompts/__about__.py"
 extra-dependencies = [
   "mypy>=1.0.0",
 ]
+
+[tool.hatch.envs.docs]
+dependencies = [
+    "mkdocs",
+    "mkdocs-material",
+    "mkdocstrings[python]"
+]
+
+[tool.hatch.envs.docs.scripts]
+build = "mkdocs build"
+
 [tool.hatch.envs.types.scripts]
 check = "mypy --install-types --non-interactive {args:prompts tests}"
 
