@@ -20,6 +20,22 @@ def take_input(
     initial_color: str = Fore.BLACK + Style.BRIGHT + ITALIC,
     color_sequence: str = Fore.WHITE,
 ) -> str:
+    """
+    Args:
+        file: File to read from. `sys.stdin` by default.
+        output: Output file to print to. `sys.stdout` by default.
+        autocomplete: List of strings available for autocomplete.
+        min_autocomplete_chars: Minimum amount of characters to be entered before autocomplete shows up.
+        initial: Initial value to show before a value is inputted.
+        initial_color: Color of the initial value. Gray by default.
+        color_sequence: Color of the inputted characters. White by default.
+    
+    Returns:
+        The inputted string.
+    
+    Raises:
+        KeyboardInterrupt: User pressed CTRL+C
+    """
     buffer = StringIO()
     slice: str | None = None
     file = file or sys.stdin

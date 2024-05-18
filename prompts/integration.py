@@ -39,6 +39,7 @@ def prompt(
 
 
 class PrettyOption(click.Option):
+    """Option class for Click integration."""
     def prompt_for_value(self, ctx: click.Context) -> Any:
         assert self.prompt is not None
         return prompt(self.prompt, self.default, self.type)

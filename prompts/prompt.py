@@ -20,6 +20,7 @@ _ERROR: Final[str] = f"{Style.BRIGHT}{Fore.RED}✗{Style.RESET_ALL}"
 
 
 class Prompt:
+    """Low level prompt API."""
     def __init__(
         self,
         prompt_str: str,

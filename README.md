@@ -2,10 +2,10 @@
 
 ## Beautiful prompts for Python.
 
-[![PyPI - Version](https://img.shields.io/pypi/v/prompts.svg)](https://pypi.org/project/prompts)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/prompts.svg)](https://pypi.org/project/prompts)
+[![PyPI - Version](https://img.shields.io/pypi/v/prompts.svg)](https://pypi.org/project/prompts.py)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/prompts.svg)](https://pypi.org/project/prompts.py)
 
-_Inspired by the [prompts](https://www.npmjs.com/package/prompts) package for JavaScript_
+_Inspired by the [prompts](https://www.npmjs.com/package/prompts) package on NPM. This project was written specifically for [view.py](https://github.com/ZeroIntensity/view.py)_
 
 ---
 
@@ -58,7 +58,7 @@ if __name__ == "__main__":
 ## Installation
 
 ```console
-pip install prompts.py
+$ pip install prompts.py
 ```
 
 ## License

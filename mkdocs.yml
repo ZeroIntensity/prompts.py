@@ -1,12 +1,47 @@
 site_name: prompts.py
 site_url: https://prompts.zintensity.dev
-repo_url: https://github.com/ZeroIntensity/prompts.y
+repo_url: https://github.com/ZeroIntensity/prompts.py
 repo_name: ZeroIntensity/prompts.py
 
 nav:
-    - index.md
+    - Welcome: index.md
+    - Asking Prompts: asking.md
+    - Radio Selection: radios.md
+    - Click Integration: click.md
+    - Reference: reference.md
 
-theme: material
+theme:
+    name: material
+    palette:
+        - media: "(prefers-color-scheme)"
+          primary: deep orange
+          accent: orange
+          toggle:
+              icon: material/brightness-auto
+              name: Switch to light mode
+
+        # Palette toggle for light mode
+        - media: "(prefers-color-scheme: light)"
+          scheme: default
+          primary: deep orange
+          accent: orange
+          toggle:
+              icon: material/brightness-7
+              name: Switch to dark mode
+
+        # Palette toggle for dark mode
+        - media: "(prefers-color-scheme: dark)"
+          scheme: slate
+          primary: deep orange
+          accent: orange
+          toggle:
+              icon: material/brightness-4
+              name: Switch to system preference
+    features:
+        - content.tabs.link
+
+    icon:
+        repo: fontawesome/brands/github
 
 markdown_extensions:
     - toc:

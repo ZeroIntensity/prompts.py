@@ -19,6 +19,22 @@ def radio(
     selected_color: str = Fore.GREEN + Style.DIM + UNDERLINE,
     transient: bool = False,
 ) -> int:
+    """
+    Display a radio selection.
+
+    Args:
+        items: Sequence of available selections. Must have at least 2 values.
+        input_file: File descriptor to read input from. `sys.stdin` by default.
+        output_file: File descriptor to write output to. `sys.stdout` by default.
+        selected_color: Color to use for selected values. Green by default.
+        transient: Whether to delete the radio selection after it's done.
+
+    Raises:
+        KeyboardInterrupt: User pressed CTRL+C
+    
+    Returns:
+        Index of the selected item.
+    """
     input_file = input_file or sys.stdin
     output_file = output_file or sys.stdout
     selected = 0
@@ -117,6 +133,21 @@ def ask_radio(
     output_file: IO[str] | None = None,
     selected_color: str = Fore.GREEN + Style.DIM + UNDERLINE,
 ) -> int:
+    """
+    Display a radio selection with a prompt.
+
+    Args:
+        items: Sequence of available selections. Must have at least 2 values.
+        input_file: File descriptor to read input from. `sys.stdin` by default.
+        output_file: File descriptor to write output to. `sys.stdout` by default.
+        selected_color: Color to use for selected values. Green by default.
+    
+    Raises:
+        KeyboardInterrupt: User pressed CTRL+C
+
+    Returns:
+        Index of the selected item.
+    """
     with Prompt(question, output_file=output_file) as prompt:
         index = radio(
             items,
@@ -137,6 +168,21 @@ def confirm(
     output_file: IO[str] | None = None,
     selected_color: str = Fore.GREEN + Style.DIM + UNDERLINE,
 ) -> bool:
+    """
+    Get a yes or no value from the user, as a boolean.
+    
+    Args:
+        default: Option to be the selected value at first.
+        input_file: File descriptor to read input from. `sys.stdin` by default.
+        output_file: File descriptor to write output to. `sys.stdout` by default.
+        selected_color: Color to use for selected values. Green by default.
+    
+    Raises:
+        KeyboardInterrupt: User pressed CTRL+C
+
+    Returns:
+        `True` if yes was selected, `False` if no was selected.
+    """
     seq = ["Yes", "No"] if default is True else ["No", "Yes"]
     index = radio(
         seq,
@@ -156,6 +202,22 @@ def ask_confirm(
     output_file: IO[str] | None = None,
     selected_color: str = Fore.GREEN + Style.DIM + UNDERLINE,
 ) -> bool:
+    """
+    Get a yes or no value from the user, with a prompt.
+    
+    Args:
+        question: Prompt to display.
+        default: Option to be the selected value at first.
+        input_file: File descriptor to read input from. `sys.stdin` by default.
+        output_file: File descriptor to write output to. `sys.stdout` by default.
+        selected_color: Color to use for selected values. Green by default.
+    
+    Raises:
+        KeyboardInterrupt: User pressed CTRL+C
+
+    Returns:
+        `True` if yes was selected, `False` if no was selected.
+    """
     with Prompt(question, output_file=output_file) as prompt:
         value = confirm(
             default=default,

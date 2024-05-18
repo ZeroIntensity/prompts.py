@@ -14,12 +14,6 @@ Validator: TypeAlias = Callable[[str], ValidatorResult]
 
 __all__ = ("ask", "ValidatorResult", "Validator")
 
-
-class InvalidPrompt(BaseException):
-    def __init__(self, message: str) -> None:
-        self.message = message
-
-
 def ask(
     question_str: str,
     *,
@@ -30,6 +24,23 @@ def ask(
     validate: Validator | list[Validator] | None = None,
     default_invalid: str = "Invalid response.",
 ) -> str | None:
+    """
+    Ask a question with a prompt.
+    
+    Args:
+        question_str: Prompt to show the user.
+        initial: Initial value, as shown in `take_input`.
+        input_file: File descriptor to read input from. `sys.stdin` by default.
+        output_file: File descriptor to write output to. `sys.stdout` by default.
+        validate: Validator(s) to be used for validation of the input.
+        default_invalid: Default message to show the user if a validator returns `False`.
+
+    Raises:
+        KeyboardInterrupt: User pressed CTRL+C
+
+    Returns:
+        The inputted value.
+    """
     validators = (
         validate
         if isinstance(validate, list)
@@ -51,13 +62,10 @@ def ask(
                 text = default
             error: str | bool | None = None
             for validator in validators:
-                try:
-                    failed_message = validator(text)
-                except InvalidPrompt as e:
-                    failed_message = e.message
+                failed_message = validator(text)
 
                 if failed_message is not True:
-                    if not failed_message:
+                    if failed_message is False:
                         error = default_invalid
 
                     error = failed_message
