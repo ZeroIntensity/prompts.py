@@ -1,34 +1,37 @@
 # prompts.py
+
 ## Beautiful prompts for Python.
 
 [![PyPI - Version](https://img.shields.io/pypi/v/prompts.svg)](https://pypi.org/project/prompts)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/prompts.svg)](https://pypi.org/project/prompts)
 
-*Inspired by the [prompts](https://www.npmjs.com/package/prompts) package for JavaScript*
+_Inspired by the [prompts](https://www.npmjs.com/package/prompts) package for JavaScript_
 
------
+---
 
 ## Example
 
-```
+![Alt Text](https://raw.githubusercontent.com/ZeroIntensity/prompts.py/master/assets/example.gif)
+
+```py
 from prompts import ask, ValidatorResult
 
 
-def validate(name: str) -> ValidatorResult
+def validate(name: str) -> ValidatorResult:
     if name == "andrew":
         return "You're not allowed here, buddy!"
 
-    return name
+    return True
 
 
-ask("What's your name?")
+ask("What's your name?", validate=validate)
 ```
 
 ## Features
 
-- Fully typed
-- Extendable
-- Drop-in support for [Click](https://click.palletsprojects.com/)
+-   Fully typed
+-   Extendable
+-   Drop-in support for [Click](https://click.palletsprojects.com/)
 
 ### Click Example
 
