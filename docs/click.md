@@ -19,7 +19,7 @@ import click
 @click.command()
 @click.option(
     "--name",
-    prompt=True,
+    prompt='What is your name?',
     cls=PrettyOption,
 )
 def main(name: str):
