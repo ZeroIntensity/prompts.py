@@ -16,13 +16,11 @@ _Inspired by the [prompts](https://www.npmjs.com/package/prompts) package on NPM
 ```py
 from prompts import ask, ValidatorResult
 
-
 def validate(name: str) -> ValidatorResult:
     if name == "andrew":
         return "You're not allowed here, buddy!"
 
     return True
-
 
 ask("What's your name?", validate=validate)
 ```
@@ -39,7 +37,6 @@ ask("What's your name?", validate=validate)
 from prompts.integration import PrettyOption
 import click
 
-
 @click.command()
 @click.option(
     "--name",
@@ -49,7 +46,6 @@ import click
 )
 def main(name: str):
     ...
-
 
 if __name__ == "__main__":
     main()

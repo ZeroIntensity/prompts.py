@@ -29,10 +29,10 @@ def take_input(
         initial: Initial value to show before a value is inputted.
         initial_color: Color of the initial value. Gray by default.
         color_sequence: Color of the inputted characters. White by default.
-    
+
     Returns:
         The inputted string.
-    
+
     Raises:
         KeyboardInterrupt: User pressed CTRL+C
     """
@@ -111,7 +111,7 @@ def take_input(
             write("\b \b")
             continue
 
-        if key == "\r":
+        if key in {"\r", "\n"}:
             write("\n")
             break
 

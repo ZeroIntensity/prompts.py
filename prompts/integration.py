@@ -34,12 +34,13 @@ def prompt(
 
         return True
 
-    ask(text, validate=validate, default=str(default))
+    ask(text, validate=validate, default=str(default) if default else None)
     return result
 
 
 class PrettyOption(click.Option):
     """Option class for Click integration."""
+
     def prompt_for_value(self, ctx: click.Context) -> Any:
         assert self.prompt is not None
         return prompt(self.prompt, self.default, self.type)

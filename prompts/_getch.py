@@ -2,13 +2,21 @@ import os
 import sys
 from typing import IO
 
+
+def _handle_read(val: str) -> str:
+    if val == "":
+        raise EOFError
+
+    return val
+
+
 if os.name == "nt":
     import msvcrt
 
     def getch(file: IO[str]):
         if file is sys.stdin:
             return msvcrt.getwch()
-        return file.read(1)
+        return _handle_read(file.read(1))
 
 else:
     import termios
@@ -16,7 +24,11 @@ else:
 
     def getch(file: IO[str]):
         fd = file.fileno()
-        old_settings = termios.tcgetattr(fd)
+        try:
+            old_settings = termios.tcgetattr(fd)
+        except termios.error:
+            # running in a file stream or something similar, just read
+            return _handle_read(file.read(1))
 
         try:
             tty.setraw(file.fileno())

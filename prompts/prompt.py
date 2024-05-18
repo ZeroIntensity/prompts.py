@@ -21,6 +21,7 @@ _ERROR: Final[str] = f"{Style.BRIGHT}{Fore.RED}✗{Style.RESET_ALL}"
 
 class Prompt:
     """Low level prompt API."""
+
     def __init__(
         self,
         prompt_str: str,
@@ -82,7 +83,7 @@ class Prompt:
 
     def finish(self) -> None:
         if self._shown_error:
-            self.write(CLEAR)
+            self.write(PREVIOUS_FIRST + CLEAR)
 
     def __enter__(self) -> Self:
         self.render()

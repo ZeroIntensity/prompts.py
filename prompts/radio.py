@@ -31,7 +31,7 @@ def radio(
 
     Raises:
         KeyboardInterrupt: User pressed CTRL+C
-    
+
     Returns:
         Index of the selected item.
     """
@@ -141,7 +141,7 @@ def ask_radio(
         input_file: File descriptor to read input from. `sys.stdin` by default.
         output_file: File descriptor to write output to. `sys.stdout` by default.
         selected_color: Color to use for selected values. Green by default.
-    
+
     Raises:
         KeyboardInterrupt: User pressed CTRL+C
 
@@ -170,13 +170,13 @@ def confirm(
 ) -> bool:
     """
     Get a yes or no value from the user, as a boolean.
-    
+
     Args:
         default: Option to be the selected value at first.
         input_file: File descriptor to read input from. `sys.stdin` by default.
         output_file: File descriptor to write output to. `sys.stdout` by default.
         selected_color: Color to use for selected values. Green by default.
-    
+
     Raises:
         KeyboardInterrupt: User pressed CTRL+C
 
@@ -204,14 +204,14 @@ def ask_confirm(
 ) -> bool:
     """
     Get a yes or no value from the user, with a prompt.
-    
+
     Args:
         question: Prompt to display.
         default: Option to be the selected value at first.
         input_file: File descriptor to read input from. `sys.stdin` by default.
         output_file: File descriptor to write output to. `sys.stdout` by default.
         selected_color: Color to use for selected values. Green by default.
-    
+
     Raises:
         KeyboardInterrupt: User pressed CTRL+C
 
