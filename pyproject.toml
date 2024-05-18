@@ -30,9 +30,9 @@ dependencies = ["colorama", "typing_extensions"]
 click = ["click"]
 
 [project.urls]
-Documentation = "https://github.com/ZeroIntensity/prompts#readme"
-Issues = "https://github.com/ZeroIntensity/prompts/issues"
-Source = "https://github.com/ZeroIntensity/prompts"
+Documentation = "https://github.com/ZeroIntensity/prompts.py#readme"
+Issues = "https://github.com/ZeroIntensity/prompts.py/issues"
+Source = "https://github.com/ZeroIntensity/prompts.py"
 
 [tool.hatch.version]
 path = "src/prompts/__about__.py"
