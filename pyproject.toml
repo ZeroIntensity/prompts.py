@@ -35,7 +35,7 @@ Issues = "https://github.com/ZeroIntensity/prompts/issues"
 Source = "https://github.com/ZeroIntensity/prompts"
 
 [tool.hatch.version]
-path = "prompts/__about__.py"
+path = "src/prompts/__about__.py"
 
 [tool.hatch.envs.types]
 extra-dependencies = [
@@ -55,17 +55,20 @@ build = "mkdocs build"
 [tool.hatch.envs.types.scripts]
 check = "mypy --install-types --non-interactive {args:prompts tests}"
 
+[tool.hatch.build.targets.wheel]
+packages = ["src/prompts"]
+
 [tool.coverage.run]
-source_pkgs = ["prompts", "tests"]
+source_pkgs = ["src/prompts", "tests"]
 branch = true
 parallel = true
 omit = [
-  "prompts/__about__.py",
+  "src/prompts/__about__.py",
 ]
 
 [tool.coverage.paths]
-prompts = ["prompts", "*/prompts/prompts"]
-tests = ["tests", "*/prompts/tests"]
+prompts = ["src/prompts"]
+tests = ["tests"]
 
 [tool.coverage.report]
 exclude_lines = [
