@@ -24,7 +24,10 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dependencies = ["colorama", "typing_extensions", "click"]
+dependencies = ["colorama", "typing_extensions"]
+
+[project.optional-dependencies]
+click = ["click"]
 
 [project.urls]
 Documentation = "https://github.com/ZeroIntensity/prompts#readme"

@@ -12,7 +12,7 @@ from .prompt import Prompt
 ValidatorResult: TypeAlias = Union[str, bool]
 Validator: TypeAlias = Callable[[str], ValidatorResult]
 
-__all__ = ("ask",)
+__all__ = ("ask", "ValidatorResult", "Validator")
 
 
 class InvalidPrompt(BaseException):

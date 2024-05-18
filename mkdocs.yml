@@ -1,0 +1,42 @@
+site_name: prompts.py
+site_url: https://prompts.zintensity.dev
+repo_url: https://github.com/ZeroIntensity/prompts.y
+repo_name: ZeroIntensity/prompts.py
+
+nav:
+    - index.md
+
+theme: material
+
+markdown_extensions:
+    - toc:
+          permalink: true
+    - pymdownx.highlight:
+          anchor_linenums: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets
+    - admonition
+    - pymdownx.details
+    - pymdownx.tabbed:
+          alternate_style: true
+    - pymdownx.superfences
+
+plugins:
+    - search
+    - markdown-exec
+    - mkdocstrings:
+          handlers:
+              python:
+                  paths: [prompts]
+                  options:
+                      show_root_heading: true
+                      show_object_full_path: false
+                      show_symbol_type_heading: true
+                      show_symbol_type_toc: true
+                      show_signature: true
+                      seperate_signature: true
+                      show_signature_annotations: true
+                      signature_crossrefs: true
+                      show_source: false
+                      show_if_no_docstring: true
+                      show_docstring_examples: false
