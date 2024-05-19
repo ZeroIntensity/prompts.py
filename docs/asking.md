@@ -65,7 +65,7 @@ It comes with a `Prompt` class that acts as a context manager, but if you would 
 ```py
 from prompts import Prompt
 
-with Prompt("Always look on the bright side of life...") as prompt:
-    prompt.answer = "*whistling*"
+with Prompt("My prompt...") as prompt:
+    prompt.answer = "My answer..."
     prompt.done()  # Mark the prompt as a success!
 ```
