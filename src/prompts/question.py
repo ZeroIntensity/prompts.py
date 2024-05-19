@@ -71,8 +71,8 @@ def ask(
                 if failed_message is not True:
                     if failed_message is False:
                         error = default_invalid
-
-                    error = failed_message
+                    else:
+                        error = failed_message
 
             prompt.answer = text
             if error:
